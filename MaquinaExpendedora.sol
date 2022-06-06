@@ -1,4 +1,4 @@
-//SPDX-Licencse-Identifier: MIT
+// SPDX-Licencse-Identifier: MIT
 pragma solidity ^0.8.0;
 
 contract MaquinaExpendedora {
@@ -18,7 +18,7 @@ contract MaquinaExpendedora {
     }
 
     function comprarRefresco(uint256 idRefresco) payable public {
-        require(msg.value === frescos[idRefresco].precioRefresco, "Tiene que eniar la cantidad exacta de ETH");
+        require(msg.value == refrescos[idRefresco].precioRefresco, "Tiene que eniar la cantidad exacta de ETH");
 
         refrescos[idRefresco].estaPagado = true;
         payable(msg.sender).transfer(msg.value);
